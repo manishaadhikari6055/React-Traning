@@ -1,5 +1,5 @@
 import React from 'react';
-import Banner from '../components/UI/Banner';
+import Banner from '../Components/UI/Banner';
 import { useNavigate } from 'react-router-dom';
 import Card from '../Components/UI/card';
 
@@ -32,6 +32,17 @@ function Home() {
     }
   ];
 
+  const getData=()=>{
+    try{
+      axios.get('https://gastro-backend.e-aribt.com/api/services').then(res=>{
+        console.log(res)
+      }).catch(err=>{
+        console.log(err)
+      })
+    }catch (error) {
+      console.log(error)
+    }
+  }
   return (
     <div>
       <Banner title="Home" subtitle="It's a home page" description="It's a description" />
